@@ -1,0 +1,29 @@
+.playlist h3 {
+  font-size: 22px;
+}
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 300px;
+  overflow-x: scroll;
+  padding: 0 30px;
+}
+@media (max-width: 1400px) {
+  .row {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 810px) {
+  .playlist h3 {
+    font-size: 19px;
+  }
+}
+@media (max-width: 600px) {
+  .playlist h3 {
+    padding-left: 30px;
+  }
+  .row {
+    padding: 0 15px;
+  }
+}

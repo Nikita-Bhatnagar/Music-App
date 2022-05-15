@@ -1,0 +1,18 @@
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader {
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  border: 3px solid rgb(101, 101, 101);
+  border-bottom-color: #f3f3f3;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+  margin: 50px auto;
+}

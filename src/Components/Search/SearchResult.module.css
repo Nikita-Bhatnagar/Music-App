@@ -1,0 +1,35 @@
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 1350px;
+  overflow-x: scroll;
+}
+.heading {
+  font-size: 28px;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+.listrow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1350px;
+  overflow-x: scroll;
+}
+.listrow ul {
+  padding-left: 5px;
+}
+@media (max-width: 1400px) {
+  h3 {
+    margin-left: 0px;
+    padding-left: 25px;
+  }
+}
+
+@media (max-width: 810px) {
+  h3 {
+    font-size: 22px;
+    padding-left: 15px;
+  }
+}

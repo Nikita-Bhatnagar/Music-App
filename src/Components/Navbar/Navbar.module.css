@@ -1,0 +1,12 @@
+.navbar {
+  padding-top: 20px;
+}
+.brandName {
+  font-size: 28px;
+  font-family: "Pacifico", cursive;
+}
+@media (max-width: 1400px) {
+  .brandName {
+    padding-left: 45px;
+  }
+}

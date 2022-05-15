@@ -1,0 +1,9 @@
+.playlistSec h3 {
+  font-size: 22px;
+  margin-left: 28px;
+}
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}

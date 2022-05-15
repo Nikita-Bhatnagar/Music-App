@@ -1,0 +1,36 @@
+.trendingListItem {
+  min-width: 400px;
+  margin: 20px;
+}
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.trendingImg {
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+a .title {
+  font-size: 16px;
+  margin: 0;
+  text-overflow: ellipsis;
+  font-weight: 500;
+
+  color: #fff;
+}
+a .artists {
+  font-size: 13px;
+  margin: 0;
+  color: rgb(247, 231, 204);
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+}
+@media (max-width: 810px) {
+  a .title {
+    font-size: 14px;
+  }
+}

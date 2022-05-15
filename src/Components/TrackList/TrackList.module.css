@@ -1,0 +1,35 @@
+.trending h3 {
+  /* margin-left: 50px; */
+  font-size: 22px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  margin-left: -20px;
+  overflow-x: scroll;
+  min-height: 300px;
+}
+::-webkit-scrollbar {
+  height: 0;
+}
+.row ul {
+  list-style-type: none;
+}
+@media (max-width: 1400px) {
+  .row {
+    padding-left: 55px;
+  }
+}
+@media (max-width: 810px) {
+  .trending h3 {
+    font-size: 19px;
+  }
+}
+@media (max-width: 600px) {
+  .row {
+    padding-left: 30px;
+  }
+  .trending h3 {
+    padding-left: 30px;
+  }
+}

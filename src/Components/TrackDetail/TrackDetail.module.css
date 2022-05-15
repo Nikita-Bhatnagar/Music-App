@@ -1,0 +1,83 @@
+.trackDetailsSec {
+  margin-top: 60px;
+  padding-bottom: 30px;
+}
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.title {
+  font-size: 36px;
+  font-weight: 700;
+}
+.stats {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(247, 231, 204);
+}
+.duration {
+  margin-left: 6px;
+}
+.lyrics {
+  margin-top: 30px;
+  text-align: center;
+}
+.artists {
+  font-size: 22px;
+  font-weight: 500;
+  color: rgb(247, 231, 204);
+  margin-bottom: 0px;
+}
+.btnRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.btn {
+  background-image: linear-gradient(to right, #135a82, #fdb903, #e95c04);
+  padding: 6px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+.fullLyrics {
+  text-align: center;
+  font-size: 14px;
+  color: rgb(247, 231, 204);
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .trackImg {
+    width: 250px;
+  }
+  .title {
+    font-size: 30px;
+    margin-bottom: 0px;
+  }
+  .artists {
+    font-size: 19px;
+    margin-top: 10px;
+  }
+  .stats {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .btnRow {
+    justify-content: center;
+  }
+  .lyrics {
+    font-size: 14px;
+  }
+}

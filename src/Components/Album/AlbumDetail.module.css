@@ -1,0 +1,61 @@
+.albumDetailSec {
+  margin-top: 60px;
+  padding-bottom: 20px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.albumImg {
+  margin-right: 60px;
+}
+.name {
+  font-size: 48px;
+  font-weight: 700;
+}
+.info {
+  font-size: 20px;
+  color: rgb(247, 231, 204);
+  font-weight: 500;
+}
+.stats {
+  font-size: 16px;
+  font-weight: 400;
+}
+.info p {
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+.tracksSec ul {
+  margin-top: 30px;
+}
+@media (max-width: 1400px) {
+  .albumDetailSec {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+  .info {
+    text-align: center;
+    font-size: 18px;
+  }
+  .albumImg {
+    margin-right: 0;
+  }
+  .name {
+    font-size: 36px;
+  }
+  .stats {
+    font-size: 14px;
+  }
+}
+@media (max-width: 425px) {
+  .albumImg {
+    width: 250px;
+  }
+}

@@ -1,0 +1,28 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  min-height: 300px;
+  overflow-x: scroll;
+  padding: 0 30px;
+}
+.artists h3 {
+  font-size: 22px;
+}
+@media (max-width: 1400px) {
+  .row {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 810px) {
+  .artists h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+  }
+  .row {
+    min-height: 220px;
+    padding: 0 15px;
+  }
+}

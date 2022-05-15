@@ -1,0 +1,38 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+}
+.title {
+  padding-left: 15px;
+}
+.col {
+  flex-basis: 33%;
+  padding-right: 15px;
+  word-wrap: break-word;
+}
+.col3 {
+  text-align: end;
+  padding-right: 6px;
+}
+.horizontalLine {
+  height: 1px;
+  border: none;
+  outline: none;
+  background-color: rgba(64, 63, 63, 0.685);
+  margin: 0;
+}
+.serialNo {
+  padding-right: 10px;
+}
+.row:hover {
+  background-color: rgba(58, 57, 57, 0.753);
+}
+@media (max-width: 768px) {
+  .row {
+    font-size: 14px;
+  }
+}
