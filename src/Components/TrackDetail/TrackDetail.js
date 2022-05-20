@@ -1,13 +1,19 @@
 import classes from "./TrackDetail.module.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../LoadingSpinner/Loader";
 import { options } from "../../config";
+import { BsPlayCircle, BsPauseCircle } from "react-icons/bs";
+import { GiSpeaker, GiSpeakerOff } from "react-icons/gi";
 const TrackDetail = () => {
   const [lyricsData, setLyricsData] = useState([]);
   const [trackData, setTrackData] = useState({});
   const [displayFullLyrics, setDisplayFullLyrics] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [timelinePosition, setTimelinePosition] = useState("0");
+  const [muted, setMuted] = useState(false);
   const params = useParams();
   const id = params.trackId;
 
@@ -77,6 +83,38 @@ const TrackDetail = () => {
   } else {
     lyrics = "Lyrics not available";
   }
+  const audioRef = useRef();
+  const timelineRef = useRef();
+
+  function toggleAudio(event) {
+    if (!isPlaying) {
+      audioRef.current.play();
+      setIsPlaying(true);
+    } else {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+  }
+  function audioEnded() {
+    audioRef.current.pause();
+    setIsPlaying(false);
+  }
+  function changeTimelinePosition() {
+    const percentagePosition =
+      (100 * audioRef.current.currentTime) / audioRef.current.duration;
+    const backgroundSize = `${percentagePosition}% 100%`;
+    setTimelinePosition(`${percentagePosition}`);
+  }
+  function changeSeek() {
+    const time = (timelineRef.current.value * audioRef.current.duration) / 100;
+
+    audioRef.current.currentTime = time;
+  }
+  function toggleSound() {
+    setMuted((prevState) => {
+      return !prevState;
+    });
+  }
 
   return (
     <section className={classes.trackDetailsSec}>
@@ -105,11 +143,6 @@ const TrackDetail = () => {
                 >{`${min} min ${sec} sec`}</span>
               </p>
               <div className={classes.btnRow}>
-                <a href={trackData.preview_url} target="_blank">
-                  <button type="button" className={classes.btn}>
-                    Preview
-                  </button>
-                </a>
                 <a
                   href={
                     trackData.external_urls
@@ -131,6 +164,49 @@ const TrackDetail = () => {
               Read full lyrics
             </p>
           )}
+          <div className={classes.audioPlayer}>
+            <div className={classes.audioInfo}>
+              <div className={classes.audioRow}>
+                <img
+                  className={classes.audioInfoImg}
+                  src={trackData.album ? trackData.album.images[2].url : ""}
+                  alt=""
+                />
+                <div className={classes.info}>
+                  <p>{trackData.name}</p>
+                  <p>{artists}</p>
+                </div>
+              </div>
+            </div>
+            <div className={classes.audioControls}>
+              <audio
+                ref={audioRef}
+                src={trackData.preview_url}
+                onEnded={audioEnded}
+                onTimeUpdate={changeTimelinePosition}
+                muted={muted}
+              ></audio>
+              <div className={classes.controls}>
+                <button className={classes.playBtn} onClick={toggleAudio}>
+                  {!isPlaying && <BsPlayCircle className={classes.playerBtn} />}
+                  {isPlaying && <BsPauseCircle className={classes.playerBtn} />}
+                </button>
+                <input
+                  style={{ backgroundSize: `${timelinePosition}% 100%` }}
+                  type="range"
+                  ref={timelineRef}
+                  className={classes.timeline}
+                  max="100"
+                  value={timelinePosition}
+                  onChange={changeSeek}
+                />
+                <button className={classes.soundBtn} onClick={toggleSound}>
+                  {!muted && <GiSpeaker className={classes.playerBtn} />}
+                  {muted && <GiSpeakerOff className={classes.playerBtn} />}
+                </button>
+              </div>
+            </div>
+          </div>
         </React.Fragment>
       )}
     </section>
