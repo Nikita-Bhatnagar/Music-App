@@ -20,10 +20,10 @@ export const top50Id = ["4nNVfQ9eWidZXkBKZN5li4", "37i9dQZEVXbLZ52XmnySJg"];
 
 const classicsIds = ["5dXBBx4qwsvrgF7o6j3RS9", "37i9dQZF1DWUH2AzNQzWua"];
 
-// export const options = {
-//   method: "GET",
-//   headers: {
-//     "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
-//     "X-RapidAPI-Key": "6a18fc96c8msh3d386828ce47149p1aaf02jsn66d3044a7d5e",
-//   },
-// };
+export const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
+    "X-RapidAPI-Key": "6a18fc96c8msh3d386828ce47149p1aaf02jsn66d3044a7d5e",
+  },
+};
